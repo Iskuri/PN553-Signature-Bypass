@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
@@ -8,6 +9,7 @@
 #include <string.h>
 #include <sys/select.h>
 #include <openssl/sha.h>
+#include <time.h>
 
 struct FirmwareChunk {
 
@@ -674,6 +676,5 @@ int main() {
 
 	}
 
-	return;
-
+	return 0;
 }

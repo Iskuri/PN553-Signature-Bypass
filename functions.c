@@ -10,7 +10,7 @@ void overriddenMemcpy(uint8_t* r0, uint32_t r1, uint32_t r2) {
 		r0[i] = 0xbb;
 	}
 
-	uint32_t* addressPtr = 0x00100007;
+	uint32_t* addressPtr = (uint32_t*) 0x00100007;
 	uint32_t address = addressPtr[0];
 
 	r0[0] = address&0xff;
@@ -18,7 +18,7 @@ void overriddenMemcpy(uint8_t* r0, uint32_t r1, uint32_t r2) {
 	r0[2] = (address>>16) &0xff;
 	r0[3] = (address>>24) &0xff;
 
-	uint8_t* memPtr = address;
+	uint8_t* memPtr = (uint8_t*) address;
 
 	for(int i = 0 ; i < 0x10 ; i++) {
 		r0[i+5] = memPtr[i];
